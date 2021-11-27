@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Add Task{% endblock title %}
+{% block home %}active{% endblock home %}
+{% block body %}
+
+      <div class="container col-lg-6 col-12 my-5">
+        <h1><span class="title">Add</span>Task</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Task Name</label>
+              <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="taskname" placeholder="Task Title">
+              
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Task Desc</label>
+                <textarea class="form-control input" id="exampleFormControlTextarea1" rows="3" name="taskdesc" placeholder="Task Desciption"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Web Site Link</label>
+                <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="tasklink" placeholder="Link of the related website">
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Priority</label>
+                <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="priority" placeholder="Enter 1-10 for Priority">
+              </div>
+              {% if user.is_authenticated %}
+            <button type="submit" class="btn add"><i class="fas fa-plus"></i>Add Task</button>
+            {% else %}
+            <button type="submit" class="btn disabled add"><i class="fas fa-plus"></i>Add Task</button> Please Login to Add Task...
+            {%endif%}
+          </form>
+      </div>
+      
+{% endblock body %}

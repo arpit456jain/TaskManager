@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Edit Task input{% endblock title %}
+{% block body %}
+      <div class="container col-lg-6 my-5">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Task Name</label>
+              <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="taskname" value="{{title}}">
+              
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Task Desc</label>
+                <textarea class="form-control input" id="exampleFormControlTextarea1" rows="3" name="taskdesc" value="{{desc}}">{{desc}}</textarea>
+              </div>
+              {% if user.is_authenticated %}
+            <button type="submit" class="btn add">Update</button>
+            {% else %}
+            <button type="submit" class="btn add disabled">Update</button> Please Login to Add Task...
+            {%endif%}
+          </form>
+      </div>
+
+{% endblock body %}
