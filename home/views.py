@@ -9,7 +9,14 @@ def home(request):
     if request.method == 'POST':
         taskname = request.POST['taskname']
         taskdesc = request.POST['taskdesc']
-        entry = Task(taskTitle=taskname,taskDesc=taskdesc,user=request.user)
+        tasklink = request.POST['tasklink']
+        priority = request.POST['priority']
+        if priority == "":
+            priority = 0
+        else:
+            priority = int(priority)
+        print(taskname,taskdesc,tasklink,priority)
+        entry = Task(taskTitle=taskname,taskDesc=taskdesc,user=request.user,link=tasklink,priority=priority)
         entry.save()
         print("true")
     return render(request,'index.html')
