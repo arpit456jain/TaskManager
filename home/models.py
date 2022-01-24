@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Task(models.Model):
-    taskTitle = models.CharField(max_length=30)
+    taskTitle = models.CharField(max_length=100)
     taskDesc = models.CharField(max_length=300)
     time = models.DateTimeField(auto_now_add=True)
     link = models.CharField(max_length=200,blank=True,default="#")
