@@ -16,14 +16,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label">Task Desc</label>
                 <textarea class="form-control input" id="exampleFormControlTextarea1" rows="3" name="taskdesc" placeholder="Task Desciption"></textarea>
               </div>
-              <div class="mb-3">
-                <label for="" class="form-label">Web Site Link</label>
-                <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="tasklink" placeholder="Link of the related website">
-              </div>
-              <div class="mb-3">
-                <label for="" class="form-label">Priority</label>
-                <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="priority" placeholder="Enter 1-10 for Priority">
-              </div>
+                            
               {% if user.is_authenticated %}
             <button type="submit" class="btn add"><i class="fas fa-plus"></i>Add Task</button>
             {% else %}

@@ -61,7 +61,7 @@ def loginuser(request):
 
 def logoutuser(request):
     logout(request)
-    return redirect('/')
+    return redirect('/login')
 
 def deletetask(request,slug):
     if request.method=="GET":

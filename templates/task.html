@@ -15,9 +15,9 @@
                 <th scope="col">#</th>
                 <th scope="col">Task name</th>
                 <th scope="col">Task Desc</th>
-                <th scope="col">Link</th>
+                
                 <th scope="col">edit/done</th>
-                <th scope="col">Priority</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -26,13 +26,11 @@
                 <th scope="row">{{forloop.counter}}</th>
                 <td>{{task.taskTitle}}</td>
                 <td>{{task.taskDesc}}</td>
-                <td> <a href="{{task.link}}" target="_blank">click here </a></td>
+               
                 <td> <a href="/edittask/{{task.id}}" class="btn btn-success">Edit</a>
                      <a href="/deletetask/{{task.id}}" class="btn btn-danger">Done</a>
                 </td>
-                <td> <a href="/edittask/{{task.id}}" class="btn btn-success">Up</a>
-                     <a href="/deletetask/{{task.id}}" class="btn btn-danger">Down</a>
-                 </td>
+                
      
               </tr>
               {% endfor %}
