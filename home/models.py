@@ -7,3 +7,6 @@ class Task(models.Model):
     taskDesc = models.CharField(max_length=300)
     time = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+
+    def __str__(self):
+        return f"{self.taskTitle} - {self.user.username}"
