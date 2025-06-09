@@ -9,12 +9,12 @@
             {% csrf_token %}
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Task Name</label>
-              <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="taskname" placeholder="Task Title">
+              <input type="text" required class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" name="taskname" placeholder="Task Title">
               
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Task Desc</label>
-                <textarea class="form-control input" id="exampleFormControlTextarea1" rows="3" name="taskdesc" placeholder="Task Desciption"></textarea>
+                <textarea required class="form-control input" id="exampleFormControlTextarea1" rows="3" name="taskdesc" placeholder="Task Desciption"></textarea>
               </div>
                             
               {% if user.is_authenticated %}
